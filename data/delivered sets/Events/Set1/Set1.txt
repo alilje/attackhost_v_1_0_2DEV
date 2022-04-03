@@ -1,0 +1,80 @@
+Set 1 
+
+The attached ZIP file contains the following event files (.evtx). 
+
+Event files for Atomic Red Team Tests that have names in the form of:
+
+T???? #?, where ? is any integer are named:
+
+T????_?.evtx
+
+while event files that have names in te form of:
+
+T????.??? #?
+
+are named:
+
+T????_???_?.evtx
+
+Examples:
+
+Test T1082.002 #1 has an event file named T1082_002_1.evtx
+Test T1018 #10 has an event file named T1082_1.evtx
+
+Here are the Atomic Red Team Tests that are delivered in Set 1
+
+T1007 #1
+T1010 #1
+T1012 #1
+T1016 #1
+T1016 #2
+T1016 #4
+T1016 #6
+T1016 #7
+T1018 #1
+T1018 #10
+T1018 #11
+T1018 #2
+T1018 #3
+T1018 #4
+T1018 #5
+T1049 #1
+T1057 #2
+T1069.001 #02
+T1069.002 #01
+T1069.002 #03
+T1069.002 #08
+T1082.002 #1
+T1082.002 #3
+T1082.002 #5
+T1082.002 #6
+T1082.002 #7
+T1082.002 #9
+T1082 #1
+T1082 #10
+T1082 #6
+T1082 #8
+T1083 #1
+T1083 #2
+T1087.001 #10
+T1087.001 #8
+T1124 #1
+T1135 #3
+T1135 #5
+T1201 #5
+T1201 #6
+T1217 #4
+T1217 #5
+T1217 #6
+T1217 #7
+T1482 #1
+T1482 #2
+T1482 #4
+T1482 #5
+T1518.001 #1
+T1518 #1
+
+
+
+
+

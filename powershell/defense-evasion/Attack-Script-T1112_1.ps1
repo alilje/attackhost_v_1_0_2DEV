@@ -1,0 +1,2 @@
+'***********T1112_1---Modify Registry---Modify Registry of Current User Profile - cmd**********'| Out-File -FilePath $args[0]
+cmd.exe /c 'reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /t REG_DWORD /v HideFileExt /d 1 /f' |  Out-File -FilePath $args[0] -Append

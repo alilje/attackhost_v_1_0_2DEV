@@ -1,0 +1,7 @@
+T99999
+5
+ipconfig /all
+netsh interface show interface
+arp -a
+nbtstat -n
+net config

@@ -1,0 +1,2 @@
+"**********************************************************************************************" | Out-File -FilePath $args[0]
+cmd.exe /c 'REG QUERY HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography /v MachineGuid'   |  Out-File -FilePath $args[0] -Append

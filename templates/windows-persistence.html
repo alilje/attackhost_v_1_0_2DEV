@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<title>AtomicHost - Windows Persistence Techniques</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/atomicflask.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#accordion").accordion({
+            collapsible: true,
+            heightStyle: "content"
+
+
+        });
+    });
+    $(function () {
+        $(document).tooltip();
+    });
+</script>
+
+<style>
+    html, body, h1, h2, h3, h4, h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+<body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="w3-bar-item w3-right">Attack Host v. 1.0.2</span>
+    </div>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+        <br>
+        <div class="w3-container w3-row">
+            <div class="w3-container w3-center">
+                <p><h5><b>Attack Host</b></h5></p><p><h5><b> v. 1.0.2</b></h5></p>
+            </div>
+            <div class="w3-col w3-center">
+                <img src="../static/images/security.png" style="width:100px">
+            </div>
+        </div>
+        <div class="w3-container w3-center">
+            <h6><b><i>Windows Techniques</i></b></h6>
+        </div>
+        <div class="w3-container w3-center">
+            <h6><i>Run Attacks from Credential Access Category</i></h6>
+        </div>
+       
+    </nav>
+
+
+    <div class="w3-main" style="margin-left:350px;margin-top:43px;">
+
+
+        <p><h4><b>Select a Technique, then select the attack to make. Red buttons are tests that can be run as standard Windows Users. Green Buttons mean the 
+            test should be run as Administrator. This does not necessarily mean the attack won't run for a normal user but rather additional information can be gathered when run as Administrator.</b></h4></p>
+
+        <!--   ###########################################################################################################################################################################################################################################-->
+        <div id="accordion">
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1007  System Service Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1007_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1007 #2</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1010  List Processes of Main Windows</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1010_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1010 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1012  Query Registry</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1012_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1012 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--   ###########################################################################################################################################################################################################################################-->
+
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1016 System Network Configuration Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1016_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1016 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1016_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1016 #2</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1016_4/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1016 #4</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1016_6/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1016 #6</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1016_7/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1016 #7</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!--   ###########################################################################################################################################################################################################################################-->
+
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1018  Remote System Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1018_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1018 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1018_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1018 #2</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1018_4/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1018 #4</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1018_5/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1018 #5</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1018_10/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1018 #10</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1018_11/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1018 #11</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1049  System Network Connections Recovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1049_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1049 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1057 Process Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1057_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1057 #2</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1069.001 Local Groups</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1069_001_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1069.001 #2</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1069.002 Domain Groups</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1069_002_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1069.002 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1069_002_3/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1069.002 #3</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1069_002_8/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1069.002 #8</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1082 System Information Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:15%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1082_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1082 #1</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1082_6/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_6">T1082 #6</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1082_8/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_6">T1082 #8</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1082_10/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_6">T1082 #10</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1083 File and Directory Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1083_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1083 #1</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1083_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1083 #2</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1087.001 Local Account</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_001_8/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1087.001 #8</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_001_10/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1087.001 #10</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1087.002 Domain Account</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_002_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1087.002 #1</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>                 
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_002_5/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1087.002 #5</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_002_6/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1087.002 #6</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_002_7/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1087.002 #7</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1087_002_9/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1087.002 #9</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1124 System Time Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1124_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_4">T1124 #1</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1135 Network Share Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1135_3/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_4">T1135 #3</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1135_5/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_4">T1135 #5</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1201 Password Policy Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1201_5/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1201 #5</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1201_6/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1201 #6</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1217 Browser Bookmark Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1217_5/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_5">T1217 #5</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1217_6/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="1217_6">T1217 #6</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1217_7/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_7">T1217 #7</a>
+                        </td>
+                        <td style="width:70%"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1482 Domain Trust Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1482_4/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1482 #4</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1482_5/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1482 #5</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1518 Software Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1518_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_4">T1518 #1</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+
+
+
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">1518.001 Security Software Discovery</h3>
+            <div>
+                <table style="align: center;">
+                    <tr>
+                        <td style="width:25%">
+                            <a href="http://127.0.0.1:5000/run/discovery/T1518_001_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1217_4">T1518.001 #1</a>
+                        </td>
+
+                        <td style="width:70%"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+              
+
+        <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+"**********************************************************************************************" | Out-File -FilePath $args[0]
+cmd.exe /c 'reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer" /v svcVersion' | Out-File -FilePath $args[0] -Append

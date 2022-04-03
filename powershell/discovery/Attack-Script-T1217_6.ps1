@@ -1,0 +1,2 @@
+"**********************************************************************************************" | Out-File -FilePath $args[0]
+cmd.exe /c 'where /R C:\Users\ places.sqlite' | Out-File -FilePath $args[0] -Append

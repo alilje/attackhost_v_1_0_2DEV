@@ -1,0 +1,2 @@
+"**********************************************************************************************" | Out-File -FilePath $args[0]
+cmd.exe /c 'dir /s /b %USERPROFILE%\\Favorites' | Out-File -FilePath $args[0] -Append
