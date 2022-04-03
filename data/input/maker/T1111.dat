@@ -1,11 +1,10 @@
-T1111_001_1 
-T1111.001 
+T1560_001_01
+T1560.001
 1
-discovery
-This is a test
-Here is the title
+Collection
+Archive via Utility
+Compress Data for Exfiltration With Rar
+1 
 1
-2
-My little pony
-Elvis Still lives
-UFOs are real
+"#{rar_exe}" a -r #{output_file} #{input_path}\*#{file_extension}
+del /f /q /s #{output_file} >nul 2>&1

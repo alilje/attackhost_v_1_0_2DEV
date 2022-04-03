@@ -20,39 +20,28 @@ class DatDoc:
         self.redCanaryTechniqueCategory = self.inFH.readline().replace("\n","")
         self.techniqueTitle = self.inFH.readline().replace("\n","")
         self.attackTitle = self.inFH.readline().replace("\n","")
-        self.attackFileName = "Attack-Script-" + self.name + ".ps1"
+        #self.attackFileName = "Attack-Script-" + self.name + ".ps1"
         self.numAttackStatements = self.inFH.readline().replace("\n","")
         self.numCleanupStatements = self.inFH.readline().replace("\n","")
-        print(self.numAttackStatements)
-        print(self.numCleanupStatements)
         self.attackStatements = []
         self.cleanupStatements = []
         for i in range(1,int(self.numAttackStatements)+1):
             self.attackStatements.append(self.inFH.readline().replace("\n",""))
-            #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
-            #self.outFH.write(outLine)
         for i in range(1,int(self.numCleanupStatements)+1):
             self.cleanupStatements.append(self.inFH.readline().replace("\n",""))
-            #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
-            #self.outFH.write(outLine)
-        #self.inFH.close()
+        self.inFH.close()
+        
+        print("Name: " + str(self.name))
+        print("Red Canary Technique Name: " + str(self.redCanaryTechniqueName))
+        print("Red Canary Test Number: " + str(self.redCanaryTechniqueNumber))
+        print("Red Canary Technique Category: " + str(self.redCanaryTechniqueCategory ))
+        print("Red Canary Technique Title: " + str(self.techniqueTitle)) 
+        print("Red Canary Test Name: " + str(self.attackTitle)) 
         #self.attackFileName = "Attack-Script-" + self.name + ".ps1"
-        #self.cleanupFileName = "Cleanup-Script-" + self.name + ".ps1"
-        #self.outAttackFH = open(self.attackFileName,"w")
-        #self.outCleanupFH = open(self.cleanupFileName,"w")
-
-        print(self.attackStatements)
-        print(self.cleanupStatements)
-        #for i in range(1,self.commands+1):
-            #self.attackStatements.append = self.inFH.readline().replace("\n","")
-        #for i in range(1,self.)    
-            
-        #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
-        #self.outFH.write(outLine)
-        #self.header = "'" + "***********" + self.name + "---" + self.techniqueTitle + "---" + self.attackTitle + "**********" + "'" + '| Out-File -FilePath $args[0]' + "\n"
-
-        #self.outFH.close()
-        #self.inFH.close()
+        print("Number of Attack Statements: " + str(self.numAttackStatements ))
+        print("Number of Cleanup Statements: " + str(self.numCleanupStatements ))
+        print("Attack Statements: " + str(self.attackStatements ))
+        print("Cleanup Statements: " + str(self.cleanupStatements))
 
 class SupportingDirs:
     
@@ -71,3 +60,20 @@ class SupportingDirs:
                            "lateral-movement"
                            "persistence"
                            ]
+        
+         #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+            #self.outFH.write(outLine)
+            #for i in range(1,self.commands+1):
+            #self.attackStatements.append = self.inFH.readline().replace("\n","")
+        #for i in range(1,self.)    
+            
+        #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+        #self.outFH.write(outLine)
+        #self.header = "'" + "***********" + self.name + "---" + self.techniqueTitle + "---" + self.attackTitle + "**********" + "'" + '| Out-File -FilePath $args[0]' + "\n"
+#self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+            #self.outFH.write(outLine)
+        #self.inFH.close()
+        #self.attackFileName = "Attack-Script-" + self.name + ".ps1"
+        #self.cleanupFileName = "Cleanup-Script-" + self.name + ".ps1"
+        #self.outAttackFH = open(self.attackFileName,"w")
+        #self.outCleanupFH = open(self.cleanupFileName,"w")
