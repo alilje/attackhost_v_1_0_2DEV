@@ -1,6 +1,9 @@
 from gov.sandia.atomicHost.util.powershell import AttackHostFile
 from gov.sandia.atomicHost.util.consts import AhConst
 import sys
+import os
+import os.path
+from gov.sandia.atomicHost.filesystem.helpers import Touch
 
 class DatDoc:
     
@@ -46,6 +49,7 @@ class DatDoc:
 class SupportingDirs:
     
     def __init__(self,aDatDoc):
+        self.theDatDoc = aDatDoc
         self.categories = ["collection", 
                            "credential-access",
                            "defense-evasion",
@@ -61,7 +65,59 @@ class SupportingDirs:
                            "persistence"
                            ]
         
-         #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+        dirName = self.theDatDoc.name    
+        category = self.theDatDoc.redCanaryTechniqueCategory
+        self.originalDir = os.getcwd()
+        os.chdir(os.path.join(self.originalDir,"powershell"))
+        self.powershellDir = os.getcwd()
+        os.chdir(os.path.join(self.powershellDir,category))
+        self.categoryDir = os.getcwd()
+        isADir = os.path.isdir(os.path.join(self.categoryDir, self.theDatDoc.name))
+        if isADir==False:
+           self.setUpDirs()
+        os.chdir(self.originalDir)
+            
+        
+    def setUpDirs(self):
+        os.chdir(self.categoryDir)
+        os.mkdir(self.theDatDoc.name)
+        self.theTechniqueNameDir = os.path.join(self.categoryDir,self.theDatDoc.name)
+        os.chdir(self.theTechniqueNameDir)
+        Touch(".gitkeep")
+        os.mkdir("temp")
+        os.mkdir("bin")
+        os.mkdir("in")
+        os.mkdir("out")
+        pathOut = os.path.join(self.theTechniqueNameDir,"out")
+        pathIn = os.path.join(self.theTechniqueNameDir,"in")
+        pathTemp = os.path.join(self.theTechniqueNameDir,"temp")
+        pathBin = os.path.join(self.theTechniqueNameDir,"bin")
+        os.chdir(pathOut)
+        Touch(".gitkeep")
+        os.chdir(pathIn)
+        Touch(".gitkeep")
+        os.chdir(pathTemp)
+        Touch(".gitkeep")
+        os.chdir(pathBin)
+        Touch(".gitkeep")
+        
+        
+        
+        
+        
+class AttackScript:
+    
+    def __init__(self):
+        pass
+    
+    
+class CleanUpScript:
+    
+    def __init__(self):
+        pass
+    
+    
+        #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
             #self.outFH.write(outLine)
             #for i in range(1,self.commands+1):
             #self.attackStatements.append = self.inFH.readline().replace("\n","")
@@ -77,3 +133,5 @@ class SupportingDirs:
         #self.cleanupFileName = "Cleanup-Script-" + self.name + ".ps1"
         #self.outAttackFH = open(self.attackFileName,"w")
         #self.outCleanupFH = open(self.cleanupFileName,"w")
+        
+        
