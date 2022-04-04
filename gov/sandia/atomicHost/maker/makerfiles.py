@@ -8,11 +8,26 @@ from gov.sandia.atomicHost.filesystem.helpers import Touch
 class DatDoc:
     
     def __init__(self,afile):
+        self.attackHostDirectory = os.getcwd()
+        self.powershellDir = os.path.join(self.attackHostDirectory,"powershell")
+        self.theFile = afile
+        self.attackInformation = self.theFile
+        self.catCollectionDir = os.path.join(self.powershellDir,"collection")
+        self.catCredentialAccess = os.path.join(self.powershellDir,"credential-access")
+        self.catDefenseEvasion = os.path.join(self.powershellDir,"defense-evasion")
+        self.catDiscovery = os.path.join(self.powershellDir,"discovery")
+        self.catExternal = os.path.join(self.powershellDir,"external")
+        self.catPrivilegeEscalation = os.path.join(self.powershellDir,"privilege-escalation")
+        self.catCommandAndControl = os.path.join(self.powershellDir, "command-and-control")
+        self.catExecution = os.path.join(self.powershellDir, "execution")
+        self.catExfiltration = os.path.join(self.powershellDir, "exfiltration")
+        self.catImpact = os.path.join(self.powershellDir, "impact")
+        self.catInitialAccess = os.path.join(self.powershellDir, "initial-access")
+        self.catLateralMovement = os.path.join(self.powershellDir, "lateral-movement")
+        self.catPersistence = os.path.join(self.powershellDir, "persistence") 
         self.theFile = afile
         self.attackInformation = self.theFile
         self.readAttackInformation()
-        
-    
         #includes both attack and clean-up
         
     def readAttackInformation(self):       
@@ -23,7 +38,6 @@ class DatDoc:
         self.redCanaryTechniqueCategory = self.inFH.readline().replace("\n","")
         self.techniqueTitle = self.inFH.readline().replace("\n","")
         self.attackTitle = self.inFH.readline().replace("\n","")
-        #self.attackFileName = "Attack-Script-" + self.name + ".ps1"
         self.numAttackStatements = self.inFH.readline().replace("\n","")
         self.numCleanupStatements = self.inFH.readline().replace("\n","")
         self.attackStatements = []
@@ -34,37 +48,10 @@ class DatDoc:
             self.cleanupStatements.append(self.inFH.readline().replace("\n",""))
         self.inFH.close()
         
-        print("Name: " + str(self.name))
-        print("Red Canary Technique Name: " + str(self.redCanaryTechniqueName))
-        print("Red Canary Test Number: " + str(self.redCanaryTechniqueNumber))
-        print("Red Canary Technique Category: " + str(self.redCanaryTechniqueCategory ))
-        print("Red Canary Technique Title: " + str(self.techniqueTitle)) 
-        print("Red Canary Test Name: " + str(self.attackTitle)) 
-        #self.attackFileName = "Attack-Script-" + self.name + ".ps1"
-        print("Number of Attack Statements: " + str(self.numAttackStatements ))
-        print("Number of Cleanup Statements: " + str(self.numCleanupStatements ))
-        print("Attack Statements: " + str(self.attackStatements ))
-        print("Cleanup Statements: " + str(self.cleanupStatements))
-
 class SupportingDirs:
     
     def __init__(self,aDatDoc):
         self.theDatDoc = aDatDoc
-        self.categories = ["collection", 
-                           "credential-access",
-                           "defense-evasion",
-                           "discovery",
-                           "external",
-                           "privilege-escalation",
-                           "command-and-control",
-                           "execution",
-                           "exfiltration",
-                           "impact",
-                           "initial-access",
-                           "lateral-movement"
-                           "persistence"
-                           ]
-        
         dirName = self.theDatDoc.name    
         category = self.theDatDoc.redCanaryTechniqueCategory
         self.originalDir = os.getcwd()
@@ -100,15 +87,29 @@ class SupportingDirs:
         Touch(".gitkeep")
         os.chdir(pathBin)
         Touch(".gitkeep")
-        
-        
-        
-        
-        
+              
 class AttackScript:
     
-    def __init__(self):
-        pass
+    def __init__(self,aDatDoc):
+        self.aDatDoc = aDatDoc
+        self.theAttackScriptFileName = "Attack-Script-" + self.aDatDoc.name + ".ps1"
+        self.attackScriptFile = os.path.join(self.aDatDoc.catCollectionDir,self.theAttackScriptFileName)
+        self.outFH = open(self.attackScriptFile,"w")
+        self.header1 = "'" + "** AttackHost Name: " + self.aDatDoc.name + "***********" + "'"
+        self.header2 = "'" + "** Red Canary Technique Name: " + self.aDatDoc.redCanaryTechniqueName + "***********" + "'"
+        self.header3 = "'" + "** Red Canary Technique Test Number: " + self.aDatDoc.redCanaryTechniqueNumber + "**********" + "'"
+        self.header4 = "'" + "** Red Canary Technique Test Category: " + self.aDatDoc.redCanaryTechniqueCategory + "**********" + "'"
+        
+        
+        
+        
+        FH.readline().replace("\n","")
+                #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+
+        
+        
+        #self.inFH.close()
+
     
     
 class CleanUpScript:
@@ -116,7 +117,7 @@ class CleanUpScript:
     def __init__(self):
         pass
     
-    
+    #self.attackFileName = "Attack-Script-" + self.name + ".ps1"
         #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
             #self.outFH.write(outLine)
             #for i in range(1,self.commands+1):
@@ -133,5 +134,22 @@ class CleanUpScript:
         #self.cleanupFileName = "Cleanup-Script-" + self.name + ".ps1"
         #self.outAttackFH = open(self.attackFileName,"w")
         #self.outCleanupFH = open(self.cleanupFileName,"w")
+class InfoDatDoc:
+    
+    def __init__(self,theDatDoc):
+        self.theDatDoc = theDatDoc
         
+    def printall(self):
+        
+        print("Name: " + str(self.theDatDoc.name))
+        print("Red Canary Technique Name: " + str(self.theDatDoc.redCanaryTechniqueName))
+        print("Red Canary Test Number: " + str(self.theDatDoc.redCanaryTechniqueNumber))
+        print("Red Canary Technique Category: " + str(self.theDatDoc.redCanaryTechniqueCategory ))
+        print("Red Canary Technique Title: " + str(self.theDatDoc.techniqueTitle)) 
+        print("Red Canary Test Name: " + str(self.theDatDoc.attackTitle)) 
+        
+        print("Number of Attack Statements: " + str(self.theDatDoc.numAttackStatements ))
+        print("Number of Cleanup Statements: " + str(self.theDatDoc.numCleanupStatements ))
+        print("Attack Statements: " + str(self.theDatDoc.attackStatements ))
+        print("Cleanup Statements: " + str(self.theDatDoc.cleanupStatements))        
         
