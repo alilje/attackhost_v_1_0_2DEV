@@ -8,6 +8,7 @@ from gov.sandia.atomicHost.filesystem.helpers import Touch
 class DatDoc:
     
     def __init__(self,afile):
+        
         self.attackHostDirectory = os.getcwd()
         self.powershellDir = os.path.join(self.attackHostDirectory,"powershell")
         self.theFile = afile
@@ -27,6 +28,7 @@ class DatDoc:
         self.catPersistence = os.path.join(self.powershellDir, "persistence") 
         self.theFile = afile
         self.attackInformation = self.theFile
+        print(self.attackInformation)
         self.readAttackInformation()
         #includes both attack and clean-up
         
@@ -47,7 +49,8 @@ class DatDoc:
         for i in range(1,int(self.numCleanupStatements)+1):
             self.cleanupStatements.append(self.inFH.readline().replace("\n",""))
         self.inFH.close()
-        
+        print(self.attackStatements)
+        print(self.cleanupStatements)
 class SupportingDirs:
     
     def __init__(self,aDatDoc):
@@ -92,18 +95,61 @@ class AttackScript:
     
     def __init__(self,aDatDoc):
         self.aDatDoc = aDatDoc
+        
+        
+        #self.commandOutLine = 'cmd.exe /c ' + "'" + self.cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n""\n"
         self.theAttackScriptFileName = "Attack-Script-" + self.aDatDoc.name + ".ps1"
+        self.theCleanupScriptFileName = "Cleanup-Script-" + self.aDatDoc.name + ".ps1"
         self.attackScriptFile = os.path.join(self.aDatDoc.catCollectionDir,self.theAttackScriptFileName)
-        self.outFH = open(self.attackScriptFile,"w")
-        self.header1 = "'" + "** AttackHost Name: " + self.aDatDoc.name + "***********" + "'"
-        self.header2 = "'" + "** Red Canary Technique Name: " + self.aDatDoc.redCanaryTechniqueName + "***********" + "'"
-        self.header3 = "'" + "** Red Canary Technique Test Number: " + self.aDatDoc.redCanaryTechniqueNumber + "**********" + "'"
-        self.header4 = "'" + "** Red Canary Technique Test Category: " + self.aDatDoc.redCanaryTechniqueCategory + "**********" + "'"
+        self.cleanupScriptFile = os.path.join(self.aDatDoc.catCollectionDir,self.theCleanupScriptFileName)
+        self.attackFH = open(self.attackScriptFile,"w")
+        self.cleanFH = open(self.cleanupScriptFile,"w")
+
+        self.headerOutline = "'**************************************************************************************'" + '| Out-File -FilePath $args[0] ' + "\n"
+        
+        self.lheaderAttackHostName = "** AttackHost Name: " + self.aDatDoc.name
+        self.headerAttackHostName = "'" + self.lheaderAttackHostName + "'" + " | Out-File -FilePath $args[0]  -Append" + "\n"
+        
+        self.lheaderRCTechniqueName = "** Red Canary Technique Name:  " + self.aDatDoc.redCanaryTechniqueName
+        self.headerRCTechniqueName = "'" + self.lheaderRCTechniqueName + "'" + " | Out-File -FilePath $args[0] -Append" + "\n"
+        
+        self.lheaderRdCTechniqueTestNumber = "** Red Canary Technique Test Number: " + str(self.aDatDoc.redCanaryTechniqueNumber)
+        self.headerRdCTechniqueTestNumber =  "'" + self.lheaderRdCTechniqueTestNumber + "'" + " | Out-File -FilePath $args[0] -Append" + "\n"
+        
+        self.lheaderRCTechniqueTestCategory = "** Red Canary Technique Test Category: " + str(self.aDatDoc.redCanaryTechniqueCategory)
+        self.headerRCTechniqueTestCategory = "'" + self.lheaderRCTechniqueTestCategory + "'" + " | Out-File -FilePath $args[0] -Append" + "\n"
+        
+        self.ltechniqueTitle = "** Red Canary Technique Title: " + str(self.aDatDoc.techniqueTitle)    
+        self.techniqueTitle = "'" + self.ltechniqueTitle + "'" + " | Out-File -FilePath $args[0] -Append" + "\n"
+         
+        self.lattackTitle =  "** Red Canary Test Title: " + str(self.aDatDoc.attackTitle)
+        self.attackTitle = "'" + self.lattackTitle + "'" + " | Out-File -FilePath $args[0] -Append" + "\n"
+
+        self.attackFH.write(self.headerOutline)
+        self.attackFH.write(self.headerAttackHostName)
+        self.attackFH.write(self.headerRCTechniqueName)
+        self.attackFH.write(self.headerRdCTechniqueTestNumber)
+        self.attackFH.write(self.headerRCTechniqueTestCategory)
+        self.attackFH.write(self.techniqueTitle)
+        self.attackFH.write(self.attackTitle)
+        for i in range(0, int(self.aDatDoc.numAttackStatements)):
+            self.commandOutAttack = "cmd.exe /c " + "'" + self.aDatDoc.attackStatements[i] + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+            self.attackFH.write(self.commandOutAttack)
+        self.cleanFH.write(self.headerOutline)
+        self.cleanFH.write(self.headerAttackHostName)
+        self.cleanFH.write(self.headerRCTechniqueName)
+        self.cleanFH.write(self.headerRdCTechniqueTestNumber)
+        self.cleanFH.write(self.headerRCTechniqueTestCategory)
+        self.cleanFH.write(self.techniqueTitle)
+        self.cleanFH.write(self.attackTitle)
+        for j in range(0, int(self.aDatDoc.numCleanupStatements)):
+            self.commandOutCleanup = "cmd.exe /c " + "'" + self.aDatDoc.cleanupStatements[j] + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
+            self.cleanFH.write(self.commandOutCleanup)
+        self.attackFH.close()
+        self.cleanFH.close()
         
         
-        
-        
-        FH.readline().replace("\n","")
+        #FH.readline().replace("\n","")
                 #self.outLine = 'cmd.exe /c ' + "'" + cm + "'" + ' |  Out-File -FilePath $args[0] -Append' + "\n"
 
         
