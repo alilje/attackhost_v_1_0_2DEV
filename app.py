@@ -1,18 +1,15 @@
 from flask import Flask
 from flask import render_template
 import os
-import sys
+import os.path
 from gov.sandia.atomicHost.ah.controller import ControllerWindows
 from gov.sandia.atomicHost.evtx.evtxfiles import EvtxFile
-import os.path
+from gov.sandia.atomicHost.etc.configuration.attackHostDirs import Config
 from gov.sandia.usersimulator.controller.guicontoller.web import Firefox
 from gov.sandia.usersimulator.controller.guicontoller.web import Chrome
 from gov.sandia.usersimulator.controller.guicontoller.web import Edge
 from gov.sandia.usersimulator.controller.guicontoller.microsoft import Word
 from gov.sandia.usersimulator.controller.guicontoller.mounts import Mounts
-from gov.sandia.atomicHost.etc.configuration.attackHostDirs import Config
-import subprocess
-
 
 app = Flask(__name__)
 
@@ -21,6 +18,12 @@ app = Flask(__name__)
 @app.route('/')
 def atomicgui():
     return render_template('dashboard.html')
+
+@app.route('/winCollection')
+def winCollection():
+    return render_template('windows-collection.html')
+
+
 
 @app.route('/winDiscovery')
 def winDiscovery():
@@ -34,9 +37,6 @@ def winCredentialAccess():
 def winDefenseEvasion():
     return render_template('windows-defense-evasion.html')
 
-@app.route('/winCollection')
-def winCollection():
-    return render_template('windows-collection.html')
 
 @app.route('/winCommand-and-control')
 def winCommandAndControl():
