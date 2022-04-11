@@ -2,9 +2,9 @@ from flask import Flask
 from flask import render_template
 import os
 import os.path
-from gov.sandia.atomicHost.ah.controller import ControllerWindows
-from gov.sandia.atomicHost.evtx.evtxfiles import EvtxFile
-from gov.sandia.atomicHost.etc.configuration.attackHostDirs import Config
+from gov.sandia.attackHost.controller import ControllerWindows
+from gov.sandia.attackHost.evtx.evtxfiles import EvtxFile
+from gov.sandia.attackHost.etc.configuration.attackHostDirs import Config
 from gov.sandia.usersimulator.controller.guicontoller.web import Firefox
 from gov.sandia.usersimulator.controller.guicontoller.web import Chrome
 from gov.sandia.usersimulator.controller.guicontoller.web import Edge
@@ -22,8 +22,6 @@ def atomicgui():
 @app.route('/winCollection')
 def winCollection():
     return render_template('windows-collection.html')
-
-
 
 @app.route('/winDiscovery')
 def winDiscovery():
@@ -71,16 +69,14 @@ def winPrivilegeEscalation():
     return render_template('windows-privilege-escalation.html')
 
 
-
 @app.route('/run/<string:techniqueCategory>/<string:name>/<int:number>/<int:action>/<string:platform>')
 def technique(techniqueCategory,name,number,action,platform):
 
     cf = Config()
     cf.checkFolders()
-    cf.clearResults()
-
+    
     if platform=="W":
-        c = ControllerWindows(techniqueCategory,name,number,action,platform,cf.powerShellDir,cf.taggedEventsDirectory,cf.jsonFromEventsDirectory, cf.attackOutputDir,cf.detectOutputDir,cf.discoveryCategoryScriptDir,cf.absInstallationDir)
+        c = ControllerWindows(techniqueCategory,name,number,action,platform,cf.powerShellDir,cf.taggedEventsDirectory,cf.jsonFromEventsDirectory, cf.attackOutputDir,cf.detectOutputDir,cf.absInstallationDir)
 
     elif platform=="X":
         return "<H1>Linux is not yet implemented</H1>"
@@ -89,7 +85,7 @@ def technique(techniqueCategory,name,number,action,platform):
         return "<H1>OSX is not yet implemented</H1>"
 
     else:
-        return "Unknown platform. Shoule be W,X or M"
+        return "Unknown platform. Should be W,X or M"
 
 
     return "<H1>Attack Host Run Complete</H1>"
