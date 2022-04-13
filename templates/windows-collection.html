@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
-<title>AttackHost - Windows Collection Techniques</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../static/css/atomicflask.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<script>
-    $(function () {
-        $("#accordion").accordion({
-            collapsible: true,
-            heightStyle: "content"
+    <title>AttackHost - Windows Collection Techniques</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/atomicflask.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content"
 
 
+            });
         });
-    });
-    $(function () {
-        $(document).tooltip();
-    });
-</script>
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
 
-<style>
-    html, body, h1, h2, h3, h4, h5 {
-        font-family: "Raleway", sans-serif
-    }
-</style>
-<body class="w3-light-grey">
+    <style>
+        html, body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+    <body class="w3-light-grey">
 
     <!-- Top container -->
     <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
@@ -56,63 +56,60 @@
     </nav>
 
 
-    <div class="w3-main" style="margin-left:350px;margin-top:43px;">
+        <div class="w3-main" style="margin-left:350px;margin-top:43px;">
 
+<p><h4><b>Select a Technique, then select an attack. 
+            It is advised to run all attacks as Administrator</b></h4></p>
 
-        <p><h4><b>Select a Technique, then select an attack. For those techniques that have both an Attack and Cleanup button, first execute the attack button. When the Attack is complete cleanup can be run. Running cleanup before the attack ends can leave the computer in an unknown state which would require manual cleanup. 
-        It is advised to run all attacks and cleanups as Administrator</b></h4></p>
-
-        <!--   ###########################################################################################################################################################################################################################################-->
-        <div id="accordion">
-            <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1560.001  Archive via Utility</h3>
-            <div>
-                <table style="align: center;">
-                    <tr>
-                        <td style="width:40%">
-                            <a href="http://127.0.0.1:5000/run/collection/T1560_001_01_A/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:12pt;width:200px;height:50" value="">T1560.001 #1 Attack</a>
-                        </td>
-                        <td style="width:40%">
-                                <a href="http://127.0.0.1:5000/run/collection/T1560_001_01_C/1/1/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-blue w3-margin" style="font-family:Arial;font-size:12pt;width:200px;height:50" value="">T1560.001 #1 Cleanup</a>
-                        </td>
-                        <td style="width:20%">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <!--   ###########################################################################################################################################################################################################################################-->
             
+            <!--   ###########################################################################################################################################################################################################################################-->
+            <div id="accordion">
+                <!--   ###########################################################################################################################################################################################################################################-->
+                <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1119 Automated Collection Command Prompt</h3>
+                <div>
+                    <table style="align: center;">
+                        <tr>
+                            <td style="width:30%">
+                                <a href="http://127.0.0.1:5000/run/collection/T1119_4/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:12pt;width:200px;height:50" value="">T1119 #4 Attack</a>
+                            </td>
+                            <td style="width:70%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--   ###########################################################################################################################################################################################################################################-->
+                
 
+            </div>
+
+        
+
+                
+
+            <script>
+                // Get the Sidebar
+                var mySidebar = document.getElementById("mySidebar");
+
+                // Get the DIV with overlay effect
+                var overlayBg = document.getElementById("myOverlay");
+
+                // Toggle between showing and hiding the sidebar, and add overlay effect
+                function w3_open() {
+                    if (mySidebar.style.display === 'block') {
+                        mySidebar.style.display = 'none';
+                        overlayBg.style.display = "none";
+                    } else {
+                        mySidebar.style.display = 'block';
+                        overlayBg.style.display = "block";
+                    }
+                }
+
+                // Close the sidebar with the close button
+                function w3_close() {
+                    mySidebar.style.display = "none";
+                    overlayBg.style.display = "none";
+                }
+            </script>
         </div>
-
-    </div>
-
-              
-
-        <script>
-        // Get the Sidebar
-        var mySidebar = document.getElementById("mySidebar");
-
-        // Get the DIV with overlay effect
-        var overlayBg = document.getElementById("myOverlay");
-
-        // Toggle between showing and hiding the sidebar, and add overlay effect
-        function w3_open() {
-            if (mySidebar.style.display === 'block') {
-                mySidebar.style.display = 'none';
-                overlayBg.style.display = "none";
-            } else {
-                mySidebar.style.display = 'block';
-                overlayBg.style.display = "block";
-            }
-        }
-
-        // Close the sidebar with the close button
-        function w3_close() {
-            mySidebar.style.display = "none";
-            overlayBg.style.display = "none";
-        }
-        </script>
-    </div>
-</body>
+    </body>
 </html>

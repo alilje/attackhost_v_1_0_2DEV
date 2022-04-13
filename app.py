@@ -42,6 +42,7 @@ def winCommandAndControl():
 
 @app.route('/winExecution')
 def winExecution():
+    print("OUT")
     return render_template('windows-execution.html')
 
 @app.route('/winExfiltration')
@@ -71,24 +72,25 @@ def winPrivilegeEscalation():
 
 @app.route('/run/<string:techniqueCategory>/<string:name>/<int:number>/<int:action>/<string:platform>')
 def technique(techniqueCategory,name,number,action,platform):
-
     cf = Config()
     cf.checkFolders()
     
     if platform=="W":
         c = ControllerWindows(techniqueCategory,name,number,action,platform,cf.powerShellDir,cf.taggedEventsDirectory,cf.jsonFromEventsDirectory, cf.attackOutputDir,cf.detectOutputDir,cf.absInstallationDir)
-
+        return "<H1>Attack Host Run Complete</H1>"
     elif platform=="X":
         return "<H1>Linux is not yet implemented</H1>"
-
     elif platform == "M":
         return "<H1>OSX is not yet implemented</H1>"
-
     else:
         return "Unknown platform. Should be W,X or M"
-
-
     return "<H1>Attack Host Run Complete</H1>"
+
+    
+@app.route('/dummy1')
+def dummy1():
+    
+    return render_template('dummy1.html')
 
 
 @app.route('/run/evtx/<int:num>')
