@@ -1,0 +1,3 @@
+"**********************************************************************************************" | Out-File -FilePath $args[0]
+cmd.exe /c 'reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f' | Out-File -FilePath $args[0] -Append
+cmd.exe /c 'reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f' | Out-File -FilePath $args[0] -Append

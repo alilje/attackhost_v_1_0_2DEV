@@ -1,0 +1,77 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "ATTACK_TEMP": {
+      "name": "ATTACK_TEMP",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "data": {
+      "name": "data",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "etc": {
+      "name": "etc",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "gov": {
+      "name": "gov",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "JSONFromEVTX": {
+      "name": "JSONFromEVTX",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "licenses": {
+      "name": "licenses",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "output": {
+      "name": "output",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "powershell": {
+      "name": "powershell",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "static": {
+      "name": "static",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "templates": {
+      "name": "templates",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "__pycache__": {
+      "name": "__pycache__",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 1,
+    "notes": 0,
+    "f": 2
+  }
+}

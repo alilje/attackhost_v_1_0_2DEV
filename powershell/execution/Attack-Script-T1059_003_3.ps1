@@ -1,0 +1,2 @@
+'***********T1059.003.002 #2-- Windows Command Shell--Writes text to a file and displays it.**********'| Out-File -FilePath $args[0]
+cmd.exe /c '%LOCALAPPDATA:~-3,1%md /c echo "Test-T1059.003 3" > static\bin\testT1059_003_3.bin & type static\bin\testT1059_003_3.bin'| Out-File -FilePath $args[0] -Append

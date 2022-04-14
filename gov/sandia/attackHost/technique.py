@@ -55,6 +55,10 @@ class TechniqueRunner:
             self.attackCommand = self.makeAttackCommand("command-and-control")
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
+        if self.technique == "defense-evasion":
+            self.attackCommand = self.makeAttackCommand("defense-evasion")
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()
      
     def makeAttackCommand(self,aStr):
         theDir = os.path.join(self.powerShellDir,aStr)

