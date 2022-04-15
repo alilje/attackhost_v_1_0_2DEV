@@ -1,0 +1,2 @@
+'*************************************************************************************************'| Out-File -FilePath $args[0]
+cmd.exe /c 'mshta.exe "about:<hta:application><script language="VBScript">Close(Execute("CreateObject(""Wscript.Shell"").Run%20""powershell.exe%20-nop%20-Command%20Write-Host%20#{message};Start-Sleep%20-Seconds%20#{seconds_to_sleep}"""))</script>'"' |  Out-File -FilePath $args[0] -Append
