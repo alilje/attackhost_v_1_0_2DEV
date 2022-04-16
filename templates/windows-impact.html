@@ -50,7 +50,7 @@
             <h6><b><i>Windows Techniques</i></b></h6>
         </div>
         <div class="w3-container w3-center">
-            <h6><i>Run Attacks from Credential Access Category</i></h6>
+            <h6><i>Run Attacks from Impact Category</i></h6>
         </div>
        
     </nav>
@@ -59,18 +59,24 @@
     <div class="w3-main" style="margin-left:350px;margin-top:43px;">
 
 
-        <p><h4><b>Select a Technique, then select the attack to make. Red buttons are tests that can be run as standard Windows Users. Green Buttons mean the 
-            test should be run as Administrator. This does not necessarily mean the attack won't run for a normal user but rather additional information can be gathered when run as Administrator.</b></h4></p>
-
+        <p><h4><b>Select a Technique, then select an attack. 
+            It is advised to run all attacks as Administrator</b></h4></p>
         <!--   ###########################################################################################################################################################################################################################################-->
         <div id="accordion">
             <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1007  System Service Discovery</h3>
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1531  Account Access Removal</h3>
             <div>
                 <table style="align: center;">
                     <tr>
-                        <td style="width:25%">
-                            <a href="http://127.0.0.1:5000/run/discovery/T1007_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="">T1007 #2</a>
+                        <td style="width:30%">
+                            <a href="http://127.0.0.1:5000/run/impact/T1531_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:14pt;width:165px;height:40px;align:center;" value="">T1531 #1</a>
+                        </td>
+                        <td style="width:70%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:30%">
+                            <a href="http://127.0.0.1:5000/run/impact/T1531_2/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:14pt;width:165px;height:40px;align:center;" value="">T1531 #2</a>
                         </td>
                         <td style="width:70%">
                         </td>
@@ -78,25 +84,12 @@
                 </table>
             </div>
             <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1010  List Processes of Main Windows</h3>
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1490 Inhibit System Recovery</h3>
             <div>
                 <table style="align: center;">
                     <tr>
-                        <td style="width:25%">
-                            <a href="http://127.0.0.1:5000/run/discovery/T1010_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1010 #1</a>
-                        </td>
-                        <td style="width:70%">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:16pt;font-weight:bold;">T1012  Query Registry</h3>
-            <div>
-                <table style="align: center;">
-                    <tr>
-                        <td style="width:25%">
-                            <a href="http://127.0.0.1:5000/run/discovery/T1012_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-red w3-margin" style="font-family:Arial;font-size:12pt;width:165px" value="T1082_1">T1012 #1</a>
+                        <td style="width:30%">
+                            <a href="http://127.0.0.1:5000/run/impact/T1490_3_1/1/0/W" class="w3-button w3-round-large w3-hover-shadow w3-ripple w3-green w3-margin" style="font-family:Arial;font-size:14pt;width:165px;height:40px;align:center;" value="T1082_1">T1490 #3</a>
                         </td>
                         <td style="width:70%">
                         </td>

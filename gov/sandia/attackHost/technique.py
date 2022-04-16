@@ -59,6 +59,18 @@ class TechniqueRunner:
             self.attackCommand = self.makeAttackCommand("defense-evasion")
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
+        if self.technique == "impact":
+            self.attackCommand = self.makeAttackCommand("impact")
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()
+        if self.technique == "exfiltration":
+            self.attackCommand = self.makeAttackCommand("exfiltration")
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()
+        if self.technique == "persistence":
+            self.attackCommand = self.makeAttackCommand("persistence")
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()       
      
     def makeAttackCommand(self,aStr):
         theDir = os.path.join(self.powerShellDir,aStr)
