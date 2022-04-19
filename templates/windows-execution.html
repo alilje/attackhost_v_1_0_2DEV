@@ -14,15 +14,12 @@
         $("#accordion").accordion({
             collapsible: true,
             heightStyle: "content"
-
-
         });
     });
     $(function () {
         $(document).tooltip();
     });
 </script>
-
 <style>
     html, body, h1, h2, h3, h4, h5 {
         font-family: "Raleway", sans-serif
@@ -54,17 +51,13 @@
         </div>
        
     </nav>
-
-
     <div class="w3-main" style="margin-left:350px;margin-top:43px;">
-
-
         <p><h4><b>Select a Technique, then select an attack. 
-            It is advised to run all attacks as Administrator</b></h4></p>
+            It is advised to run all attacks as Administrator</b></h4></p>            
         <!--   ###########################################################################################################################################################################################################################################-->
         <div id="accordion">
-            <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;align:center;">T1053.002 #1 At.exe Scheduled Task</h3>
+        <!--   ###########################################################################################################################################################################################################################################-->
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;align:center;">T1053.002 At.exe Scheduled Task</h3>
             <div>
                 <table style="align: center;">
                     <tr>
@@ -77,7 +70,7 @@
                 </table>
             </div>
             <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1559.002 #2 Execute Powershell Script via Word DDE</h3>
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1559.002 Execute Powershell Script via Word DDE</h3>
             <div>
                 <table style="align: center;">
                     <tr>
@@ -90,7 +83,7 @@
                 </table>
             </div>
             <!--   ###########################################################################################################################################################################################################################################-->
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1053.005 #1 Scheduled Task Startup Script</h3>
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1053.005 Scheduled Task Startup Script</h3>
             <div>
                 <table style="align: center;">
                     <tr>
@@ -105,7 +98,7 @@
 
             <!--   ###########################################################################################################################################################################################################################################-->
 
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1053.005 #2 Scheduled Task Local</h3>
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1053.005 Scheduled Task Local</h3>
             <div>
                 <table style="align: center;">
                     <tr>
@@ -132,7 +125,7 @@
                     
             <!--   ###########################################################################################################################################################################################################################################-->
 
-            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1569.002  Service Execution</h3>
+            <h3 class="w3-panel w3-dark-grey" style="font-family:Arial;font-size:12pt;font-weight:bold;">T1569.002 Service Execution</h3>
             <div>
                 <table style="align: center;">
                     <tr>
@@ -215,31 +208,3 @@
     </div>
 
               
-
-        <script>
-        // Get the Sidebar
-        var mySidebar = document.getElementById("mySidebar");
-
-        // Get the DIV with overlay effect
-        var overlayBg = document.getElementById("myOverlay");
-
-        // Toggle between showing and hiding the sidebar, and add overlay effect
-        function w3_open() {
-            if (mySidebar.style.display === 'block') {
-                mySidebar.style.display = 'none';
-                overlayBg.style.display = "none";
-            } else {
-                mySidebar.style.display = 'block';
-                overlayBg.style.display = "block";
-            }
-        }
-
-        // Close the sidebar with the close button
-        function w3_close() {
-            mySidebar.style.display = "none";
-            overlayBg.style.display = "none";
-        }
-        </script>
-    </div>
-</body>
-</html>

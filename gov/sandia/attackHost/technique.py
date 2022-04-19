@@ -70,7 +70,11 @@ class TechniqueRunner:
         if self.technique == "persistence":
             self.attackCommand = self.makeAttackCommand("persistence")
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
-            p.wait()       
+            p.wait()
+        if self.technique == "initial-access":
+            self.attackCommand = self.makeAttackCommand("initial-access")
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()             
      
     def makeAttackCommand(self,aStr):
         theDir = os.path.join(self.powerShellDir,aStr)
