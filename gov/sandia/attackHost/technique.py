@@ -45,34 +45,47 @@ class TechniqueRunner:
     def doAttack(self):
         if self.technique == "collection":
             self.attackCommand = self.makeAttackCommand("collection")
+            print("COLLECTION-----: " + str(self.attackCommand))
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()
+        if self.technique == "discovery":
+            self.attackCommand = self.makeAttackCommand("discovery")
+            print("DISCOVERY----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "execution":
             self.attackCommand = self.makeAttackCommand("execution")
+            print("EXECUTION-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "command-and-control":
             self.attackCommand = self.makeAttackCommand("command-and-control")
+            print("COMMAND AND CONTROL-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "defense-evasion":
             self.attackCommand = self.makeAttackCommand("defense-evasion")
+            print("DEFENSE EVASION-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "impact":
             self.attackCommand = self.makeAttackCommand("impact")
+            print("IMPACT-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "exfiltration":
             self.attackCommand = self.makeAttackCommand("exfiltration")
+            print("EXFILTRATION-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "persistence":
             self.attackCommand = self.makeAttackCommand("persistence")
+            print("PERSISTENCE-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
         if self.technique == "initial-access":
             self.attackCommand = self.makeAttackCommand("initial-access")
+            print("INITIAL-ACCESS-----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()             
      
