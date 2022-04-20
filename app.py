@@ -92,6 +92,50 @@ def dummy1():
     
     return render_template('dummy1.html')
 
+@app.route('/dummy2')
+def dummy2():
+    
+    return render_template('dummy2.html')
+
+@app.route('/dummy3')
+def dummy3():
+    
+    return render_template('dummy3.html')
+
+@app.route('/dummy4')
+def dummy4():
+    
+    return render_template('dummy4.html')
+
+@app.route('/dummy5')
+def dummy5():
+    
+    return render_template('dummy5.html')
+
+@app.route('/dummy6')
+def dummy6():
+    
+    return render_template('dummy6.html')
+
+@app.route('/dummy7')
+def dummy7():
+    
+    return render_template('dummy7.html')
+
+@app.route('/dummy8')
+def dummy8():
+    
+    return render_template('dummy8.html')
+
+@app.route('/dummy9')
+def dummy9():
+    
+    return render_template('dummy9.html')
+
+@app.route('/dummy10')
+def dummy10():
+    
+    return render_template('dummy10.html')
 
 @app.route('/run/evtx/<int:num>')
 def evtx2json(num):
