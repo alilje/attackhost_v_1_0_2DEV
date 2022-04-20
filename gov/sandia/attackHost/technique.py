@@ -53,6 +53,11 @@ class TechniqueRunner:
             print("DISCOVERY----: " + str(self.attackCommand))
             p = subprocess.Popen(['powershell.exe', self.attackCommand])
             p.wait()
+        if self.technique == "credential-access":
+            self.attackCommand = self.makeAttackCommand("credential-access")
+            print("CREDENTIAL-ACCESS-----: " + str(self.attackCommand))
+            p = subprocess.Popen(['powershell.exe', self.attackCommand])
+            p.wait()
         if self.technique == "execution":
             self.attackCommand = self.makeAttackCommand("execution")
             print("EXECUTION-----: " + str(self.attackCommand))
